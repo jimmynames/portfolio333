@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'react-emotion'
 import { Wrap } from './../components/Wrap'
 
 import notfoundgif from './../gif/notfound.gif'

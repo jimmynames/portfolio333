@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'react-emotion'
 import 'animate.css/animate.min.css'
 
 import {H1} from './../../components/HTML/H1'

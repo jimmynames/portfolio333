@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'react-emotion'
 import Link from 'gatsby-link'
 import ScrollAnimation from 'react-animate-on-scroll'
 import 'animate.css/animate.min.css'
