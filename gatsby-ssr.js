@@ -1,12 +1,12 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { renderToString } from 'react-dom/server'
-import { extractCritical } from 'emotion-server';
+import { extractCritical } from 'emotion-server'
 
 import createStore from './src/state/index.js'
 
 exports.replaceRenderer = ({ setHeadComponents, bodyComponent, replaceBodyHTMLString }) => {
-  const store = createStore();
+  const store = createStore()
 
   const ConnectedBody = () => (
     <Provider store={store}>
@@ -20,10 +20,10 @@ exports.replaceRenderer = ({ setHeadComponents, bodyComponent, replaceBodyHTMLSt
   const criticalIds = (
     <script
       dangerouslySetInnerHTML={{
-        __html: `window.__EMOTION_CRITICAL_CSS_IDS__ = ${JSON.stringify(ids)};`,
+        __html: `window.__EMOTION_CRITICAL_CSS_IDS__ = ${JSON.stringify(ids)};`
       }}
     />
-    )
+  )
   setHeadComponents([criticalIds, criticalStyle])
   replaceBodyHTMLString(html)
 }

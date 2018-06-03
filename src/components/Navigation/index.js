@@ -3,7 +3,11 @@ import styled from 'react-emotion'
 import { connect } from 'react-redux'
 import Link from 'gatsby-link'
 
-const NavComp = styled('section')`
+import logo from '../../gif/jn.gif'
+
+import EmojiToggle from '../EmojiToggle/index.js'
+
+const NavComp = styled.section`
   width: 20%;
   height: 100%;
   z-index: 666;
@@ -19,7 +23,7 @@ const NavComp = styled('section')`
   }
 `
 
-const Logo = styled('img')`
+const Logo = styled.img`
   width: 100%;
   padding-top: 1.25rem;
   margin: 0;
@@ -30,7 +34,7 @@ const Logo = styled('img')`
   }
 `
 
-const PaddingMobile = styled('div')`
+const PaddingMobile = styled.div`
   height: 100%;
 
   display: flex;
@@ -42,7 +46,7 @@ const PaddingMobile = styled('div')`
 }
 `
 
-const NavMenu = styled('ul')`
+const NavMenu = styled.ul`
   text-decoration: none;
   width: 100%;
   margin: 0;
@@ -58,7 +62,7 @@ const NavMenu = styled('ul')`
   } */}
 `
 
-const NavItem = styled('li')`
+const NavItem = styled.li`
   font-size: 18px;
   padding: 0.666em;
   font-family: 'Open Sans Condensed', Helvetica;
@@ -128,7 +132,7 @@ const mapStateToProps = state => {
   return { state }
 }
 
-const Lol = styled('div')`
+const Lol = styled.div`
   background: ${props => props.theme.black};
   height: 20px;
   width: 20px;
@@ -139,7 +143,7 @@ const Navigation = ({state}) => (
     <PaddingMobile>
       <Lol />
       <Link to='/' exact>
-        {/* <Logo src={logo} /> */}
+        <Logo src={logo} />
       </Link>
 
       <NavMenu className='Menu'>
@@ -152,15 +156,7 @@ const Navigation = ({state}) => (
         <Link to='/mycomputer/'><NavItem>Projects</NavItem></Link>
         <a onClick={() => this.handlePopUp()}><NavItem>Cv.dmg</NavItem></a>
       </NavMenu>
-{/*
-      <Emoji>
-        <div className="kitty-switch" onClick={() => this.HandleColorChange()}>
-          <input type="checkbox" id="toggle" tabindex="1"></input>
-          <div className="kitty"></div>
-          <label for="toggle" className="well"></label>
-        </div>
-      </Emoji> */}
-
+      <EmojiToggle />
     </PaddingMobile>
   </NavComp>
 )
