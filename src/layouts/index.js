@@ -4,7 +4,8 @@ import Navigation from '../components/Navigation/index.js'
 import { injectGlobal, styled, css } from 'react-emotion'
 import { ThemeProvider } from 'emotion-theming'
 
-// import PageRender from '../components/PageRender/index.js'
+import {PageRender} from '../components/PageRender/index.js'
+import {WrapLayout} from '../components/WrapLayout/index.js'
 
 require('normalize.css')
 
@@ -22,48 +23,23 @@ body {
   }
 `
 
-const WrapLayout = css`
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
-  height: 100vh;
-  ${'' /* background: ${props => props.theme.black}; */}
-  @media (max-width: 693px) {
-    flex-direction: column;
-  }
-
-  @media (min-width: ) {
-    min-width: 1200px;
-  }
-`
-
-const PageRender = css`
-  width: auto;
-  height: 100%;
-  box-sizing: border-box;
-  padding: 1.35rem;
-  padding-left: 4rem;
-  width: 78vw;
-  overflow: hidden;
-  overflow-y: scroll;
-  ${'' /* background: ${props => props.theme.black}; */}
-  @media (max-width: 693px) {
-    width: 100%;
-    height: auto;
-    padding: 0;
-  }
-  @media (max-width: 414px) {
-    width: 100%;
-    height: auto;
-  }
-
-  @media (min-width: 1295px) {
-    width: 100%;
-  }
-`
+// const WrapLayout = css`
+//   max-width: 1200px;
+//   margin: 0 auto;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   width: 100%;
+//   height: 100vh;
+//   ${'' /* background: ${props => props.theme.black}; */}
+//   @media (max-width: 693px) {
+//     flex-direction: column;
+//   }
+//
+//   @media (min-width: ) {
+//     min-width: 1200px;
+//   }
+// `
 
 const nightMode = {
   label: 'nightMode',
@@ -83,12 +59,12 @@ export default class Layout extends React.Component {
   render () {
     return (
       <ThemeProvider theme={nightMode} >
-        <div className={WrapLayout}>
+        <WrapLayout>
           <Navigation />
-          <div className={PageRender}>
+          <PageRender>
             {this.props.children()}
-          </div>
-        </div>
+          </PageRender>
+        </WrapLayout>
       </ThemeProvider>
     )
   }

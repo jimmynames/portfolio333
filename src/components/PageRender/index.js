@@ -1,6 +1,9 @@
 import styled from 'react-emotion'
 
 export const PageRender = styled.div`
+  height: 100vh;
+  width: 200px;
+  background: blue;
   width: auto;
   height: 100%;
   box-sizing: border-box;
