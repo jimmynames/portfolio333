@@ -1,5 +1,5 @@
-//taken from the official redux docs
-export default function counter(state = 0, action) {
+// taken from the official redux docs
+export default function counter (state = 0, action) {
   switch (action.type) {
     case 'INCREMENT':
       return state + 1
@@ -7,5 +7,5 @@ export default function counter(state = 0, action) {
       return state - 1
     default:
       return state
-    }
+  }
 };
