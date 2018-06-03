@@ -3,8 +3,9 @@ module.exports = {
     title: `Jimmy Names Codes`
   },
   plugins: [
+    `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
+    // `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

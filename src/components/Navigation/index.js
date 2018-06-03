@@ -23,17 +23,6 @@ const NavComp = styled.section`
   }
 `
 
-const Logo = styled.img`
-  width: 100%;
-  padding-top: 1.25rem;
-  margin: 0;
-  @media (max-width: 693px) {
-    padding-top: 0;
-    width: 50%;
-    margin: 0 auto;
-  }
-`
-
 const PaddingMobile = styled.div`
   height: 100%;
 
@@ -44,6 +33,17 @@ const PaddingMobile = styled.div`
 @media (max-width: 414px) {
   box-sizing: border-box;
 }
+`
+
+const Logo = styled.img`
+  width: 100%;
+  padding-top: 1.25rem;
+  margin: 0;
+  @media (max-width: 693px) {
+    padding-top: 0;
+    width: 50%;
+    margin: 0 auto;
+  }
 `
 
 const NavMenu = styled.ul`

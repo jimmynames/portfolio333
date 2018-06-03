@@ -1,0 +1,5 @@
+import styled from 'react-emotion'
+
+export const H1 = styled.h1`
+  color: ${props => props.theme.white};
+`
