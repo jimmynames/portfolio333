@@ -1,7 +1,7 @@
-import React from 'react';
-import Link from 'gatsby-link';
+import React from 'react'
+import Link from 'gatsby-link'
 import Navigation from '../components/Navigation/index.js'
-import { injectGlobal, css } from 'react-emotion';
+import { injectGlobal, css } from 'react-emotion'
 
 injectGlobal`
   body {
@@ -12,6 +12,9 @@ injectGlobal`
 const bodyWrapper = css`
   padding: 2rem 5rem;
 `;
+
+require('normalize.css')
+
 
 const Layout = ({ children }) => (
   <div>
