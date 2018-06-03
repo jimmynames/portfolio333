@@ -2,6 +2,7 @@ import React from 'react'
 // import Link from 'gatsby-link'
 import Navigation from '../components/Navigation/index.js'
 import { injectGlobal, styled, css } from 'react-emotion'
+import { ThemeProvider } from 'emotion-theming'
 
 require('normalize.css')
 
@@ -31,6 +32,7 @@ const WrapLayout = css`
   justify-content: center;
   width: 100%;
   height: 100vh;
+  ${'' /* background: ${props => props.theme.black}; */}
   @media (max-width: 693px) {
     flex-direction: column;
   }
@@ -40,15 +42,31 @@ const WrapLayout = css`
   }
 `
 
+const nightMode = {
+  label: 'nightMode',
+  black: 'black',
+  white: 'white',
+  blue: 'blue'
+}
+
 export default class Layout extends React.Component {
+  // constructor (props) {
+  //   super(props)
+  //   this.state = {
+  //     isDark: true,
+  //     theme: nightMode
+  //   }
+  // }
   render () {
     return (
-      <div className={WrapLayout}>
-        <Navigation />
-        <div className={bodyWrapper}>
-          {this.props.children()}
+      <ThemeProvider theme={nightMode} >
+        <div className={WrapLayout}>
+          <Navigation />
+          <div className={bodyWrapper}>
+            {this.props.children()}
+          </div>
         </div>
-      </div>
+      </ThemeProvider>
     )
   }
 }
