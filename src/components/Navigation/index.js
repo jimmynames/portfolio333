@@ -132,16 +132,9 @@ const mapStateToProps = state => {
   return { state }
 }
 
-const Lol = styled.div`
-  background: ${props => props.theme.black};
-  height: 20px;
-  width: 20px;
-`
-
 const Navigation = ({state}) => (
   <NavComp className='Nav'>
     <PaddingMobile>
-      <Lol />
       <Link to='/' exact>
         <Logo src={logo} />
       </Link>
