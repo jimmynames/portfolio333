@@ -1,6 +1,6 @@
 export const HoverAdjustments = (theme, props) => {
   if (theme.label === 'nightMode') {
-    console.log('hover theme: ', theme)
+    console.log('hover theme : ', theme)
     return `
       &:hover {}
     `
